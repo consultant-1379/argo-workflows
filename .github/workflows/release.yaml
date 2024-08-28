@@ -99,13 +99,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Docker Login
-        uses: Azure/docker-login@v1
+        uses: Azure/docker-login@v2
         with:
           username: ${{ secrets.DOCKERIO_USERNAME }}
           password: ${{ secrets.DOCKERIO_PASSWORD }}
 
       - name: Login to Quay
-        uses: Azure/docker-login@v1
+        uses: Azure/docker-login@v2
         with:
           login-server: quay.io
           username: ${{ secrets.QUAYIO_USERNAME }}
@@ -149,13 +149,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Docker Login
-        uses: Azure/docker-login@v1
+        uses: Azure/docker-login@v2
         with:
           username: ${{ secrets.DOCKERIO_USERNAME }}
           password: ${{ secrets.DOCKERIO_PASSWORD }}
 
       - name: Login to Quay
-        uses: Azure/docker-login@v1
+        uses: Azure/docker-login@v2
         with:
           login-server: quay.io
           username: ${{ secrets.QUAYIO_USERNAME }}
@@ -211,13 +211,13 @@ jobs:
         target: [ workflow-controller, argocli, argoexec ]
     steps:
       - name: Docker Login
-        uses: Azure/docker-login@v1
+        uses: Azure/docker-login@v2
         with:
           username: ${{ secrets.DOCKERIO_USERNAME }}
           password: ${{ secrets.DOCKERIO_PASSWORD }}
 
       - name: Login to Quay
-        uses: Azure/docker-login@v1
+        uses: Azure/docker-login@v2
         with:
           login-server: quay.io
           username: ${{ secrets.QUAYIO_USERNAME }}
@@ -245,13 +245,13 @@ jobs:
     needs: [ push-images ]
     steps:
       - name: Docker Login
-        uses: Azure/docker-login@v1
+        uses: Azure/docker-login@v2
         with:
           username: ${{ secrets.DOCKERIO_USERNAME }}
           password: ${{ secrets.DOCKERIO_PASSWORD }}
 
       - name: Login to Quay
-        uses: Azure/docker-login@v1
+        uses: Azure/docker-login@v2
         with:
           login-server: quay.io
           username: ${{ secrets.QUAYIO_USERNAME }}
